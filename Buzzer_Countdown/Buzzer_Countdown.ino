@@ -12,24 +12,91 @@
 int i= 0;
 int j =0;
 int k = 0;
-// count name a b c d e f g
-int zero[] = {1,1,1,1,1,1,0};
-int one[] =  {0,1,1,0,0,0,0};
-int two[] =  {1,1,0,1,1,0,1};
-int three[] ={1,1,1,1,0,0,1};
-int four[] = {0,1,1,0,0,1,1};
-int five[] = {1,0,1,1,0,1,1};
-int six[] =  {1,0,1,1,1,1,1};
-int seven[] ={1,1,1,0,0,0,0};
-int eight[] ={1,1,1,1,1,1,1};
-int nine[] = {1,1,1,1,0,1,1};
-void segmentCount(int z[]) //Takes in an array that tells the programme what segments to light
+
+
+void segmentDisplay(int a) //Takes in an array that tells the programme what segments to light
 {
+  // count name a b c d e f g
+  int zero[] = {1,1,1,1,1,1,0}; //array that will say what segments are highlighted for each number
+  int one[] =  {0,1,1,0,0,0,0};
+  int two[] =  {1,1,0,1,1,0,1};
+  int three[] ={1,1,1,1,0,0,1};
+  int four[] = {0,1,1,0,0,1,1};
+  int five[] = {1,0,1,1,0,1,1};
+  int six[] =  {1,0,1,1,1,1,1};
+  int seven[] ={1,1,1,0,0,0,0};
+  int eight[] ={1,1,1,1,1,1,1};
+  int nine[] = {1,1,1,1,0,1,1};
+  int invalid[] = {0,0,0,0,0,0,0}; //turn off all segments
+  //switch case for displaying number
+  switch (a){
+   case 0:
    for(i=0;i<8;i++){
-     if(z[i]==1) digitalWrite(i+2,HIGH);
+     if(zero[i]==1) digitalWrite(i+2,HIGH); //checks if the segmant is highlighed and sets high if it is
+     else digitalWrite(i+2,LOW); //sets low for segments that are not highlighted
+   }
+   delay(1000);
+   case 1:
+   for(i=0;i<8;i++){
+     if(one[i]==1) digitalWrite(i+2,HIGH);
      else digitalWrite(i+2,LOW);
    }
    delay(1000);
+   case 2:
+   for(i=0;i<8;i++){
+     if(two[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 3:
+   for(i=0;i<8;i++){
+     if(three[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 4:
+   for(i=0;i<8;i++){
+     if(four[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 5:
+   for(i=0;i<8;i++){
+     if(five[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 6:
+   for(i=0;i<8;i++){
+     if(six[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 7: 
+   for(i=0;i<8;i++){
+     if(seven[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 8:
+   for(i=0;i<8;i++){
+     if(eight[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   case 9: 
+   for(i=0;i<8;i++){
+     if(nine[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+   default:
+   for(i=0;i<8;i++){
+     if(invalid[i]==1) digitalWrite(i+2,HIGH);
+     else digitalWrite(i+2,LOW);
+   }
+   delay(1000);
+  }
 }
 void buzz(int pin, int duration)//Takes in the pin the buzzer is connected to and the duration that you want it sound for
 {
@@ -43,15 +110,16 @@ void setup(){
   pinMode(13,OUTPUT);
 }
 void loop(){
-  segmentCount(nine);
-  segmentCount(eight);
-  segmentCount(seven);
-  segmentCount(six);
-  segmentCount(five);
-  segmentCount(four);
-  segmentCount(three);
-  segmentCount(two);
-  segmentCount(one);
-  segmentCount(zero);
+  segmentDisplay(9);
+  segmentDisplay(8);
+  segmentDisplay(7);
+  segmentDisplay(6);
+  segmentDisplay(5);
+  segmentDisplay(4);
+  segmentDisplay(3);
+  segmentDisplay(2);
+  segmentDisplay(1);
+  segmentDisplay(0);
   buzz(13,500); //Sound the Buzzer!
 }
+
