@@ -4,7 +4,9 @@
   Circuit Setup:
   1. HDSP-C363 7 Segment With a,b...g connected to pins 2-9 of arduino
   2. Common-cathode so connect pin 6 & 1 connected to ground through 200 Ohm Resistor
+  (I did this as an alternative to putting all inputs through a resistor)
   3. VELLEMAN SVM06 Buzzer connected from arduino pin 13 to ground through a 200 ohm resistor
+  (Sometimes a smaller resistor if the buzzer is quiet)
   
   This project will countdown from 1 to 10 and then sound the buzzer.
   This will loop infinitely.
